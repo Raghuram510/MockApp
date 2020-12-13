@@ -1,0 +1,12 @@
+<h2>Find the origin place</h2>
+
+<form action="{% url 'get_origin' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Find">
+</form>
+<br>
+{% for x in data %}
+{{x.origin}}
+<br>
+{% endfor %}

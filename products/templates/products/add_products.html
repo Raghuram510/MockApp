@@ -1,0 +1,8 @@
+<form action="{% url 'add_products' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add Product">
+</form>
+<br>
+<br>
+<a href="{% url 'all_products' %}">all products</a>

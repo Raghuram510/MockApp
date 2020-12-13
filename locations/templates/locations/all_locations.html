@@ -1,0 +1,18 @@
+<h1>List of all Locations</h1>
+
+{% for x in data.results %}
+Building No:{{x.bno}}<br>
+Street: {{x.street}}<br>
+Area: {{x.area}}<br>
+State: {{x.state}}<br>
+<br>
+{% endfor %}
+
+{% if data.previous %}
+{{data.previous}}
+{% endif %}
+{% if data.next is not None %}
+{{data.next}}
+{% endif %}
+
+<a href="{% url 'add_locations' %}">Add Location</a>

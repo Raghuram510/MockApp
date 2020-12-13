@@ -1,0 +1,18 @@
+<h1>List of all Products</h1>
+
+{% for x in data.results %}
+Product Name:{{x.product_name}}<br>
+Price: {{x.price}}<br>
+Quantity: {{x.quantity}}<br>
+Origin: {{x.origin}}<br>
+<br>
+{% endfor %}
+
+{% if data.previous %}
+{{data.previous}}
+{% endif %}
+{% if data.next is not None %}
+{{data.next}}
+{% endif %}
+
+<a href="{% url 'add_products' %}">add products</a>
